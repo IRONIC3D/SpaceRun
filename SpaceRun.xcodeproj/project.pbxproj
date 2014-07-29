@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0DFC0F1987912F006DB534 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE0DFC0E1987912F006DB534 /* README.md */; };
 		AE94EB7819878F3100148FCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE94EB7719878F3100148FCE /* Foundation.framework */; };
 		AE94EB7A19878F3100148FCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE94EB7919878F3100148FCE /* CoreGraphics.framework */; };
 		AE94EB7C19878F3100148FCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE94EB7B19878F3100148FCE /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE0DFC0E1987912F006DB534 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		AE94EB7419878F3100148FCE /* SpaceRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE94EB7719878F3100148FCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE94EB7919878F3100148FCE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		AE94EB6B19878F3100148FCE = {
 			isa = PBXGroup;
 			children = (
+				AE0DFC0E1987912F006DB534 /* README.md */,
 				AE94EB7F19878F3100148FCE /* SpaceRun */,
 				AE94EBA319878F3100148FCE /* SpaceRunTests */,
 				AE94EB7619878F3100148FCE /* Frameworks */,
@@ -243,6 +246,7 @@
 			files = (
 				AE94EB8419878F3100148FCE /* InfoPlist.strings in Resources */,
 				AE94EB9719878F3100148FCE /* Images.xcassets in Resources */,
+				AE0DFC0F1987912F006DB534 /* README.md in Resources */,
 				AE94EB9519878F3100148FCE /* Spaceship.png in Resources */,
 				AE94EB8D19878F3100148FCE /* Main.storyboard in Resources */,
 			);
@@ -473,6 +477,7 @@
 				AE94EBAF19878F3100148FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE94EBB019878F3100148FCE /* Build configuration list for PBXNativeTarget "SpaceRunTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +486,7 @@
 				AE94EBB219878F3100148FCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
