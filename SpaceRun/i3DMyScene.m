@@ -18,10 +18,18 @@
 		SKSpriteNode *ship = [SKSpriteNode spriteNodeWithImageNamed:imageShipName];
 		ship.position = CGPointMake(size.width / 2, size.height / 2);
 		ship.size = CGSizeMake(40, 40);
+		ship.name = @"ship";
 		[self addChild:ship];
 	}
 	
 	return self;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	UITouch *touch = [touches anyObject];
+	CGPoint touchPoint = [touch locationInNode:self];
+	SKNode *ship = [self childNodeWithName:@"ship"];
+	ship.position = touchPoint;
 }
 
 @end
