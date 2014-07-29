@@ -8,46 +8,61 @@
 
 #import "i3DMyScene.h"
 
+@interface i3DMyScene ()
+
+@property (nonatomic, weak) UITouch *shipTouch;
+@property (nonatomic) NSTimeInterval lastUpdateTime;
+
+@end
+
 @implementation i3DMyScene
 
--(id)initWithSize:(CGSize)size {    
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
-        
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
-    }
-    return self;
+-(instancetype)initWithSize:(CGSize)size {
+	if (self == [super initWithSize:size]) {
+		self.backgroundColor = [SKColor blackColor];
+		
+		NSString *imageShipName = @"Spaceship.png";
+		SKSpriteNode *ship = [SKSpriteNode spriteNodeWithImageNamed:imageShipName];
+		ship.position = CGPointMake(size.width / 2, size.height / 2);
+		ship.size = CGSizeMake(40, 40);
+		ship.name = @"ship";
+		[self addChild:ship];
+	}
+	
+	return self;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+	self.shipTouch = [touches anyObject];
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+-(void)update:(NSTimeInterval)currentTime {
+	if (self.lastUpdateTime == 0) {
+		self.lastUpdateTime = currentTime;
+	}
+	NSTimeInterval timeDelta = currentTime - self.lastUpdateTime;
+	
+	if (self.shipTouch) {
+		[self moveShipTowardPoint:[self.shipTouch locationInNode:self] byTimeDelta:timeDelta];
+	}
+	
+	self.lastUpdateTime = currentTime;
+}
+
+- (void)moveShipTowardPoint:(CGPoint)point byTimeDelta:(NSTimeInterval)timeDelta {
+	CGFloat shipSpeed = 130;
+	SKNode *ship = [self childNodeWithName:@"ship"];
+	CGFloat distanceLeft = sqrt(pow(ship.position.x - point.x, 2) +
+								pow(ship.position.y - point.y, 2));
+	if (distanceLeft > 4) {
+		CGFloat distanceToTravel = timeDelta * shipSpeed;
+		CGFloat angle = atan2(point.y - ship.position.y,
+							  point.x - ship.position.x);
+		CGFloat yOffset = distanceToTravel * sin(angle);
+		CGFloat xOffset = distanceToTravel * cos(angle);
+		ship.position = CGPointMake(ship.position.x + xOffset,
+									ship.position.y + yOffset);
+	}
 }
 
 @end
