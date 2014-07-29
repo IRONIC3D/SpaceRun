@@ -8,6 +8,12 @@
 
 #import "i3DMyScene.h"
 
+@interface i3DMyScene ()
+
+@property (nonatomic, weak) UITouch *shipTouch;
+
+@end
+
 @implementation i3DMyScene
 
 -(instancetype)initWithSize:(CGSize)size {
@@ -26,10 +32,14 @@
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	UITouch *touch = [touches anyObject];
-	CGPoint touchPoint = [touch locationInNode:self];
-	SKNode *ship = [self childNodeWithName:@"ship"];
-	ship.position = touchPoint;
+	self.shipTouch = [touches anyObject];
+}
+
+-(void)update:(NSTimeInterval)currentTime {
+	if (self.shipTouch) {
+		SKNode *ship = [self childNodeWithName:@"ship"];
+		ship.position = [self.shipTouch locationInNode:self];
+	}
 }
 
 @end
