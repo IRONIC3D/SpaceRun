@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F86FEB17-9B48-4C9A-B99A-3029F77F8B7C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpaceRun</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2435199F-FBD7-4E61-9958-92D3E045CE7D</key>
+		<string>ssh://github.com/IRONIC3D/SpaceRun.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpaceRun.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2435199F-FBD7-4E61-9958-92D3E045CE7D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/IRONIC3D/SpaceRun.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2435199F-FBD7-4E61-9958-92D3E045CE7D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2435199F-FBD7-4E61-9958-92D3E045CE7D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpaceRun</string>
+		</dict>
+	</array>
+</dict>
+</plist>
